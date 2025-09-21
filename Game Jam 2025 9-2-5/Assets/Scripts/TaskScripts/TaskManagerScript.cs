@@ -5,10 +5,12 @@ using System;
 
 public class TaskManagerScript : MonoBehaviour
 {
-    public List<string> tasks;
+    public List<GameObject> tasks;
 
     private float task_chance = 0.1f;
     private bool task_complete = true;
+
+    private int current_task_idx;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,26 +30,15 @@ public class TaskManagerScript : MonoBehaviour
         //select a random chance at a random time if the current task is completed
         if (UnityEngine.Random.value <= task_chance && task_complete)
         {
-            int task_idx = (int)Math.Floor(UnityEngine.Random.value * tasks.Count);
-            Debug.Log($"{tasks[task_idx]}");
+            current_task_idx = (int)Math.Floor(UnityEngine.Random.value * tasks.Count);
+            Debug.Log($"{tasks[current_task_idx]}");
             task_complete = false;
         }
 
-
-        /*-----temporary statement-----*/
-
-        //in full implementation the task will signal the taskComplete function
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (tasks[current_task_idx].GetComponent<Task>().isComplete())
         {
-            taskCompleted();
+            task_complete = true;
+            tasks[current_task_idx].GetComponent<Task>().reset();
         }
-
-        /*-----temporary statement-----*/
-    }
-
-    public void taskCompleted()
-    {
-        Debug.Log("Complete");
-        task_complete = true;
     }
 }
