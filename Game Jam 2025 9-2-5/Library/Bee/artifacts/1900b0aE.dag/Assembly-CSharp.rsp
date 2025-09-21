@@ -429,6 +429,7 @@
 "Assets/Scripts/PlayerScripts/PlayerController.cs"
 "Assets/Scripts/SceneScripts/ChangeScene.cs"
 "Assets/TaskManagerScript.cs"
+"Assets/TimerStressScript.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 /deterministic
