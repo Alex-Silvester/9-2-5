@@ -428,7 +428,11 @@
 "Assets/Scripts/PlayerScripts/CameraFollowPlayer.cs"
 "Assets/Scripts/PlayerScripts/PlayerController.cs"
 "Assets/Scripts/SceneScripts/ChangeScene.cs"
+<<<<<<< HEAD
+"Assets/TimerStressScript.cs"
+=======
 "Assets/TaskManagerScript.cs"
+>>>>>>> origin/dev
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 /deterministic
