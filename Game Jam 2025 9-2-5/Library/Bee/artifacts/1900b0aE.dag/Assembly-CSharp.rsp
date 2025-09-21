@@ -424,6 +424,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.53f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.53f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/GameOverScript.cs"
+"Assets/Scripts/InteractPromptUI/InteractPromptUI.cs"
 "Assets/Scripts/PlayerScripts/CameraFollowPlayer.cs"
 "Assets/Scripts/PlayerScripts/PlayerController.cs"
 "Assets/Scripts/SceneScripts/ChangeScene.cs"
