@@ -14,7 +14,7 @@ public class TimerStressScript : MonoBehaviour
     public bool stop_stress = false;
     public bool invert_stress = false;
     int invert = 1;
-    float stress;
+    public float stress;
 
 
     [SerializeField] TextMeshProUGUI timer_text;
@@ -84,5 +84,10 @@ public class TimerStressScript : MonoBehaviour
 
 
         timer_text.text = string.Format("{0:00}:{1:00}", hours, minutes);
+
+        if(stress <= 0)
+        {
+            stress = 0;
+        }
     }
 }
