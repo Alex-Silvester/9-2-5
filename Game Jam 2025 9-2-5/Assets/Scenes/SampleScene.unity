@@ -3516,6 +3516,7 @@ MonoBehaviour:
   stress_reduction_multiplier: 6
   stop_stress: 0
   invert_stress: 0
+  stress: 0
   timer_text: {fileID: 1518269423}
   time_scaling: 5
 --- !u!4 &1206873593
@@ -5211,23 +5212,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractKey: 101
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1639511286}
-        m_TargetAssemblyTypeName: Smoke, Assembly-CSharp
-        m_MethodName: SmokeAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   InteractPrompt_UI: {fileID: 812422433}
   TargetUI: {fileID: 0}
+  task: {fileID: 0}
+  selected: 0
 --- !u!114 &1639511286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5242,6 +5230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StressScript: {fileID: 1206873592}
   ReductionAmount: 20
+  interact_key: 101
 --- !u!65 &1639511287
 BoxCollider:
   m_ObjectHideFlags: 0
