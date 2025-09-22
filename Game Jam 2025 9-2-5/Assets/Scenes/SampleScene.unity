@@ -4906,7 +4906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6850642792757361531, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -41.594
       objectReference: {fileID: 0}
     - target: {fileID: 6850642792757361531, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4915,6 +4915,38 @@ PrefabInstance:
     - target: {fileID: 7307627197995016238, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
       propertyPath: m_Name
       value: PCCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307627197995016238, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063758178157347710, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063758178157347710, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063758178157347710, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 393390cbea7d6894e81331d8f17f0da3, type: 2}
+    - target: {fileID: 8063758178157347710, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063758178157347710, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: test
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063758178157347710, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PCTask, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063758178157347710, guid: 00c57e7b4d257b74a82e0228549dd19c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
