@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,7 +5,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    public GameObject PC;
     private Vector2 move;
 
     public void OnMove(InputAction.CallbackContext context)
@@ -22,18 +20,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PC.gameObject.activeSelf)
-        {
-            if(Input.GetKeyDown(KeyCode.Q))
-            {
-                print("Disabled PC");
-                PC.SetActive(false);
-            }
-        }
-        if (PC.activeSelf == false)
-        {
-            movePlayer();
-        }
+        movePlayer();
     }
 
     public void movePlayer()
@@ -45,6 +32,8 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.1f);
-        }    
+        }
+
+        
     }
 }
