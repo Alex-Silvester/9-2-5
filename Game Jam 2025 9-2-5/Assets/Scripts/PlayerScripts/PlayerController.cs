@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     private Vector2 move;
+    public GameObject PC;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -20,7 +21,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movePlayer();
+        if(!PC.activeSelf)
+        {
+            movePlayer();
+        }
+        else
+        {
+                    
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                   
+                    PC.SetActive(false);
+                }
+        }
+        
     }
 
     public void movePlayer()
