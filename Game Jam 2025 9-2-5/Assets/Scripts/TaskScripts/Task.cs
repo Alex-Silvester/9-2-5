@@ -3,33 +3,33 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Task", menuName = "Scriptable Objects/Task")]
 public class Task : ScriptableObject
 {
-    bool complete = false;
-    bool active = false;
+    protected bool complete = false;
 
     GameObject task_position;
+
+    public void initTask()
+    {
+        complete = false;
+    }
 
     public void setPosition(GameObject task_obj)
     {
         task_position = task_obj;
-    }
-
-    public bool isActive()
-    {
-        return active;
     }
     public bool isComplete()
     {
         return complete;
     }
 
-    public void completed()
+    //Essentially the update loop
+    //Can be overrided to create new tasks in child classes
+    public virtual void run()
     {
-        complete = true;
+        Debug.Log("Blank Task");
     }
 
     public void reset()
     {
-        active = false;
         complete = false;
     }
 }
