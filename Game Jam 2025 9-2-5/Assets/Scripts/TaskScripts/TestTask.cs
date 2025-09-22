@@ -6,6 +6,7 @@ public class TestTask : Task
 {
     public override void run()
     {
+        Debug.Log("Running");
         if(Input.GetKeyDown(KeyCode.Space))
         {
             complete = true;

@@ -20,19 +20,29 @@ public class InteractPromptUI : MonoBehaviour
         {
             print("f key was pressed");
             InteractPrompt_UI.SetActive(false);
+            gameObject.SetActive(false);
+            PlayerInTrigger = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        InteractPrompt_UI.SetActive(true);
-        PlayerInTrigger = true;
+        if(!PlayerInTrigger)
+        {
+            InteractPrompt_UI.SetActive(true);
+            gameObject.SetActive(true);
+            PlayerInTrigger = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        InteractPrompt_UI.SetActive(false);
-        PlayerInTrigger = false;
+        if(PlayerInTrigger)
+        {
+            InteractPrompt_UI.SetActive(false);
+            gameObject.SetActive(false);
+            PlayerInTrigger = false;
+        }
     }
 
 }
