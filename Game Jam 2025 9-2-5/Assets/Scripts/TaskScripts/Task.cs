@@ -25,7 +25,7 @@ public class Task : ScriptableObject
     //Can be overrided to create new tasks in child classes
     public virtual void run()
     {
-        Debug.Log("Blank Task");
+
     }
 
     public void reset()

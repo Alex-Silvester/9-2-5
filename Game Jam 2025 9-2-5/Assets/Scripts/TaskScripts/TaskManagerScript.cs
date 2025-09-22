@@ -39,7 +39,6 @@ public class TaskManagerScript : MonoBehaviour
         {
             //Get the next task
             task_idx = (int)Math.Floor(UnityEngine.Random.value * tasks.Count);
-            Debug.Log($"{tasks[task_idx]}");
         }
     }
 }
