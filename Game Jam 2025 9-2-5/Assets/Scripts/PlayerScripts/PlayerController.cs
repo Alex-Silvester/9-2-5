@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     public GameObject PC;
 
+    public GameObject task_manager;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -21,18 +23,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PC.activeSelf)
+        if(!task_manager.GetComponent<TaskManagerScript>().taskInProgress())
         {
             movePlayer();
         }
         else
         {
                     
-                if (Input.GetKeyDown(KeyCode.Q))
-                {
-                   
-                    PC.SetActive(false);
-                }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                task_manager.GetComponent<TaskManagerScript>().pauseTask();
+            }
         }
         
     }

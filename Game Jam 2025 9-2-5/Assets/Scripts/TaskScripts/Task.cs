@@ -1,20 +1,16 @@
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "Task", menuName = "Scriptable Objects/Task")]
 public class Task : ScriptableObject
 {
     protected bool complete = false;
 
-    GameObject task_position;
-
     public void initTask()
     {
         complete = false;
-    }
 
-    public void setPosition(GameObject task_obj)
-    {
-        task_position = task_obj;
+        Debug.Log("Init");
     }
     public bool isComplete()
     {

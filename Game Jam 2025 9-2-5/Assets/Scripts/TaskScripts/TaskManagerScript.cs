@@ -2,12 +2,14 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Rendering;
 
 public class TaskManagerScript : MonoBehaviour
 {
-    public List<Task> tasks;
+    [SerializeField]
+    List<GameObject> task_prompts;
 
-    private float task_chance = 0.1f;
+    bool task_selected = false;
 
     int task_idx = 0;
 
@@ -20,25 +22,51 @@ public class TaskManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if there are no tasks, then don't try to assign one
-        if (tasks.Capacity == 0)
+        //if there is no task selected, select a task
+        if (!task_selected)
         {
-            return;
+            selectTask();
+        }
+        else if (task_prompts[task_idx].GetComponent<InteractPromptUI>().taskComplete())
+        {
+            task_prompts[task_idx].GetComponent<InteractPromptUI>().resetTask();
+            task_selected = false;
+        }
+    }
+
+    void selectTask()
+    {
+        //select a random task that isn't the last task
+
+        int prev_idx = task_idx;
+        task_idx = (int)Math.Floor(UnityEngine.Random.value * task_prompts.Capacity);
+
+        if(task_idx == prev_idx && task_prompts.Capacity > 1)
+        {
+            task_idx = (task_idx + 1)%task_prompts.Capacity;
         }
 
-        //if the current chosen task isn't complete, then run the task
-        // and don't run the next code
-        if (!tasks[task_idx].isComplete())
-        {
-            tasks[task_idx].run();
-            return;
-        }
+        //tell the task that it has been selected
+        task_prompts[task_idx].GetComponent<InteractPromptUI>().select();
 
-        //select a random chance at a random time if the current task is completed
-        if (UnityEngine.Random.value <= task_chance)
-        {
-            //Get the next task
-            task_idx = (int)Math.Floor(UnityEngine.Random.value * tasks.Count);
-        }
+        //stop selecting new tasks
+        task_selected = true;
+
+        Debug.Log($"Task: {task_idx}");
+    }
+
+    public bool taskInProgress()
+    {
+        return task_prompts[task_idx].GetComponent<InteractPromptUI>().inProgress();
+    }
+
+    public void pauseTask()
+    {
+        task_prompts[task_idx].GetComponent<InteractPromptUI>().pauseTask();
+    }
+
+    public void returnTask()
+    {
+        task_prompts[task_idx].GetComponent<InteractPromptUI>().returnTask();
     }
 }

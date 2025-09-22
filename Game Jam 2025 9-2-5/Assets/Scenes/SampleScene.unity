@@ -507,23 +507,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractKey: 101
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 102060970}
-        m_TargetAssemblyTypeName: InteractPromptUI, Assembly-CSharp
-        m_MethodName: OpenPC
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   InteractPrompt_UI: {fileID: 1567842074}
   TargetUI: {fileID: 1526675837}
+  task: {fileID: 11400000, guid: 393390cbea7d6894e81331d8f17f0da3, type: 2}
+  selected: 0
 --- !u!65 &102060971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2863,9 +2850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30b690e347d3e34094cd8054f8891d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tasks:
-  - {fileID: 11400000, guid: 5e5517c5cfeac9140970888df1c885fe, type: 2}
-  - {fileID: 11400000, guid: cab113d2758420048a0a4bc77adc431a, type: 2}
+  task_prompts:
+  - {fileID: 102060969}
 --- !u!4 &995397523
 Transform:
   m_ObjectHideFlags: 0
@@ -4458,6 +4444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   PC: {fileID: 1526675837}
+  task_manager: {fileID: 995397521}
 --- !u!54 &1482433547
 Rigidbody:
   m_ObjectHideFlags: 0
