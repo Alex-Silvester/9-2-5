@@ -14,6 +14,14 @@ public class CoffeeMachine : Task
 {
     float time = 0f;
     bool coffee_made = false;
+
+    public override void initTask()
+    {
+        base.initTask();
+
+        time = 0.0f;
+        coffee_made = false;
+    }
     public override void run()
     {
 
@@ -23,14 +31,20 @@ public class CoffeeMachine : Task
             coffee_made = false;
             complete = true;
             time = 0f;
+
+            optional_interactable.transform.Find("TimerStressController").GetComponent<TimerStressScript>().stress -= 20;
             return;
         }
 
-        Debug.Log("Making Coffee");
+        if(coffee_made)
+        {
+            return;
+        }
+
         optional_interactable.GetComponent<PlayerController>().stopMovingPlayer();
 
         time += Time.deltaTime;
-        Debug.Log(time);
+        Debug.Log($"Making Coffee {time}");
 
         if (time >= 3)
         {

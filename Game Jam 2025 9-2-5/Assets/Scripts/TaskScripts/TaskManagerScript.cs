@@ -66,14 +66,4 @@ public class TaskManagerScript : MonoBehaviour
     {
         return task_prompts[task_idx].GetComponent<InteractPromptUI>().inProgress();
     }
-
-    public void pauseTask()
-    {
-        task_prompts[task_idx].GetComponent<InteractPromptUI>().pauseTask();
-    }
-
-    public void returnTask()
-    {
-        task_prompts[task_idx].GetComponent<InteractPromptUI>().returnTask();
-    }
 }
