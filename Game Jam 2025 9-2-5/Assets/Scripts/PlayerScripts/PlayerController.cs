@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     private Vector2 move;
+    public GameObject PC;
+    public GameObject task_manager;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -20,7 +22,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movePlayer();
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            stopMovingPlayer();
+        }
+
+        if(!task_manager.GetComponent<TaskManagerScript>().taskInProgress())
+        {
+            movePlayer();
+        }
+        else
+        {
+                    
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                task_manager.GetComponent<TaskManagerScript>().pauseTask();
+            }
+        }
+        
     }
 
     public void movePlayer()
@@ -32,8 +51,17 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.1f);
-        }
-
-        
+        }       
     }
+
+    public void stopMovingPlayer()
+    {
+        speed = 0f;
+    }
+
+    public void resumeMovingPlayer()
+    {
+        speed = 5f;
+    }
+
 }
