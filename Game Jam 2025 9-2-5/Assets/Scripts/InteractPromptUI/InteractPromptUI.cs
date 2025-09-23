@@ -19,6 +19,8 @@ public class InteractPromptUI : MonoBehaviour
     public void select()
     {
         selected = true;
+
+        TargetUI.SetActive(false);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
