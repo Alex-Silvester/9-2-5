@@ -6,6 +6,8 @@ public class Task : ScriptableObject
 {
     protected bool complete = false;
 
+    protected GameObject optional_interactable;
+
     public void initTask()
     {
         complete = false;
@@ -27,5 +29,10 @@ public class Task : ScriptableObject
     public void reset()
     {
         complete = false;
+    }
+
+    public void setInteractable(GameObject interactable)
+    {
+        optional_interactable = interactable;
     }
 }
