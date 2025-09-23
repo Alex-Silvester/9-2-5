@@ -31,14 +31,6 @@ public class PlayerController : MonoBehaviour
         {
             movePlayer();
         }
-        else
-        {
-                    
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                task_manager.GetComponent<TaskManagerScript>().pauseTask();
-            }
-        }
         
     }
 

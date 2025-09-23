@@ -115,26 +115,6 @@ public class InteractPromptUI : MonoBehaviour
         selected = false;
     }
 
-    public void pauseTask()
-    {
-        task_in_progress = false;
-
-        if (!TargetUI.IsUnityNull())
-        {
-            TargetUI.SetActive(false);
-        }
-    }
-
-    public void returnTask()
-    {
-        task_in_progress = true;
-
-        if (!TargetUI.IsUnityNull())
-        {
-            TargetUI.SetActive(true);
-        }
-    }
-
     public bool inProgress()
     {
         return task_in_progress;

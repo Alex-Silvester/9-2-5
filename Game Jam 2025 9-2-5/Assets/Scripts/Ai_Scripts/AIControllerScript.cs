@@ -47,7 +47,7 @@ public class AIControllerScript : MonoBehaviour
             //print("help");
             transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, speed * Time.deltaTime);
             waypointIndex = rnd.Next(0, numbercheck);
-            print(waypointIndex);
+            //print(waypointIndex);
             //IterateWaypointIndex();
             UpdateDestination();
 
