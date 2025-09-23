@@ -12,7 +12,7 @@ public class PCTask : Task
         }*/
     }
 
-    public void test()
+    public void sendEmail()
     {
         complete=true;
     }
