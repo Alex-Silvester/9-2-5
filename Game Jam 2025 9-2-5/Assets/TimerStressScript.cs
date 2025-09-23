@@ -12,8 +12,10 @@ public class TimerStressScript : MonoBehaviour
     public float max_stress;
     public float stress_gain_multiplier;
     public float stress_reduction_multiplier;
+    public float boss_close_multiplier;
     public bool stop_stress = false;
     public bool invert_stress = false;
+    public bool boss_close = false;
     int invert = 1;
     public float stress;
 
@@ -51,17 +53,29 @@ public class TimerStressScript : MonoBehaviour
 
         if (stop_stress == false)
         {
-            if (invert == 1)
+            if (boss_close == true)
             {
-                stress += stress_gain_multiplier * Time.deltaTime;
+                stress += boss_close_multiplier * Time.deltaTime;
                 stress_meter.value = stress;
                 stress_meter_pc.value = stress;
+                Debug.Log("boss " +stress);
             }
-            if (invert == -1)
+            if (boss_close == false)
             {
-                stress -= stress_reduction_multiplier * Time.deltaTime;
-                stress_meter.value = stress;
-                stress_meter_pc.value = stress;
+                if (invert == 1)
+                {
+                    stress += stress_gain_multiplier * Time.deltaTime;
+                    stress_meter.value = stress;
+                    stress_meter_pc.value = stress;
+                    Debug.Log("normal " + stress);
+                }
+                if (invert == -1)
+                {
+                    stress -= stress_reduction_multiplier * Time.deltaTime;
+                    stress_meter.value = stress;
+                    stress_meter_pc.value = stress;
+                    Debug.Log("invert " + stress);
+                }
             }
         }
         if (stress >= max_stress)
