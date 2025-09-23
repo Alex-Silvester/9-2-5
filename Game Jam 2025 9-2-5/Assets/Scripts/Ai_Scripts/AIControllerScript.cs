@@ -2,15 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = System.Random;
 
 public class AIControllerScript : MonoBehaviour
 {
 
     NavMeshAgent agent;
+
+    //waypoints
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
 
+    public float speed;
+
+    //timers
+    public float max_time_waiting;
+    public float time;
+    uint time_mul;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,10 +31,29 @@ public class AIControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, target) < 1)
+
+        Random rnd = new Random();
+        int numbercheck = waypoints.Length;
+
+
+
+
+        // Calculate time.
+        time = (Time.time - (max_time_waiting * time_mul));
+        // Time is up.
+        if (time >= max_time_waiting)
         {
-            IterateWaypointIndex();
+            // Do whatever:
+            //print("help");
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, speed * Time.deltaTime);
+            waypointIndex = rnd.Next(0, numbercheck);
+            print(waypointIndex);
+            //IterateWaypointIndex();
             UpdateDestination();
+
+            // Reset time.
+            time = 0.0f;
+            time_mul++;
         }
     }
 
