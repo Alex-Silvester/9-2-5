@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 
 public class InteractPromptUI : MonoBehaviour
 {
@@ -12,7 +13,11 @@ public class InteractPromptUI : MonoBehaviour
     public GameObject TargetUI;
     public Task task;
 
+    [SerializeField]
+    GameObject optional_interactable;
+
     public bool selected = false;
+    public bool always_active = false;
 
     bool task_in_progress = false;
 
@@ -27,13 +32,19 @@ public class InteractPromptUI : MonoBehaviour
     void Start()
     {
         InteractPrompt_UI.SetActive(false);
+
+        if(!optional_interactable.IsUnityNull())
+        {
+            task.setInteractable(optional_interactable);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //if this task is not selected, then don't run it
-        if(!selected)
+        if(!selected && !always_active)
         {
             return;
         }
@@ -49,7 +60,10 @@ public class InteractPromptUI : MonoBehaviour
             print("Interacted");
             InteractPrompt_UI.SetActive(false);
 
-            TargetUI.SetActive(true);
+            if (!TargetUI.IsUnityNull())
+            {
+                TargetUI.SetActive(true);
+            }
 
             task_in_progress = true;
             startTask();
@@ -90,7 +104,13 @@ public class InteractPromptUI : MonoBehaviour
             return;
         }
 
-        TargetUI.SetActive(false);
+        Debug.Log("Task Complete!");
+
+        if (!TargetUI.IsUnityNull())
+        {
+            TargetUI.SetActive(false);
+        }
+
         task_in_progress = false;
         selected = false;
     }
@@ -98,13 +118,21 @@ public class InteractPromptUI : MonoBehaviour
     public void pauseTask()
     {
         task_in_progress = false;
-        TargetUI.SetActive(false);
+
+        if (!TargetUI.IsUnityNull())
+        {
+            TargetUI.SetActive(false);
+        }
     }
 
     public void returnTask()
     {
         task_in_progress = true;
-        TargetUI.SetActive(true);
+
+        if (!TargetUI.IsUnityNull())
+        {
+            TargetUI.SetActive(true);
+        }
     }
 
     public bool inProgress()
