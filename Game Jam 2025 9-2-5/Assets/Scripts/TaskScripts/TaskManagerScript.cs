@@ -9,6 +9,8 @@ public class TaskManagerScript : MonoBehaviour
     [SerializeField]
     List<GameObject> task_prompts;
 
+    public GameObject point_manager;
+
     bool task_selected = false;
 
     int task_idx = 0;
@@ -38,6 +40,7 @@ public class TaskManagerScript : MonoBehaviour
             task_selected = false;
 
             Debug.Log($"Completed: {tasks_completed}");
+            point_manager.GetComponent<PointManager>().Score += 10;
         }
     }
 
