@@ -15,10 +15,12 @@ public class TaskManagerScript : MonoBehaviour
 
     int tasks_completed = 0;
 
+    bool first_pass = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        selectTask();
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class TaskManagerScript : MonoBehaviour
             task_prompts[task_idx].GetComponent<InteractPromptUI>().resetTask();
             task_selected = false;
 
-            Debug.Log(tasks_completed);
+            Debug.Log($"Completed: {tasks_completed}");
         }
     }
 
