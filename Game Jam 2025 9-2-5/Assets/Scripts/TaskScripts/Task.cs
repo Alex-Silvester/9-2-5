@@ -26,7 +26,7 @@ public class Task : ScriptableObject
 
     }
 
-    public void reset()
+    public virtual void reset()
     {
         complete = false;
     }

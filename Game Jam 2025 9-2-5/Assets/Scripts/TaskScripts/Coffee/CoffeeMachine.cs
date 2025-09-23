@@ -12,8 +12,8 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "CoffeeMachine", menuName = "Scriptable Objects/CoffeeMachine")]
 public class CoffeeMachine : Task
 {
-    float time = 0f;
-    bool coffee_made = false;
+    public float time = 0f;
+    public bool coffee_made = false;
 
     public override void initTask()
     {
@@ -24,6 +24,8 @@ public class CoffeeMachine : Task
     }
     public override void run()
     {
+
+        //Debug.Log(coffee_made);
 
         if (Input.GetKeyDown(KeyCode.E) && coffee_made == true)
         {
