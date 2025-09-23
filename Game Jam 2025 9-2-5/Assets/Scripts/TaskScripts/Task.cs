@@ -8,7 +8,7 @@ public class Task : ScriptableObject
 
     protected GameObject optional_interactable;
 
-    public void initTask()
+    public virtual void initTask()
     {
         complete = false;
 
@@ -33,6 +33,7 @@ public class Task : ScriptableObject
 
     public void setInteractable(GameObject interactable)
     {
+        Debug.Log("Set Interactable");
         optional_interactable = interactable;
     }
 }
