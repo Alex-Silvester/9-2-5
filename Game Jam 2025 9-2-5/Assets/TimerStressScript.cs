@@ -88,6 +88,11 @@ public class TimerStressScript : MonoBehaviour
             }
         }
 
+        if(hours == 5)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
 
         timer_text.text = string.Format("{0:00}:{1:00}", hours, minutes);
         timer_text_pc.text = string.Format("{0:00}:{1:00}", hours, minutes);

@@ -5505,14 +5505,14 @@ MonoBehaviour:
   stress_meter: {fileID: 623620616}
   stress_meter_pc: {fileID: 1745473544}
   max_stress: 100
-  stress_gain_multiplier: 0
+  stress_gain_multiplier: 3
   stress_reduction_multiplier: 6
   stop_stress: 0
   invert_stress: 0
   stress: 0
   timer_text: {fileID: 1518269423}
   timer_text_pc: {fileID: 687255342}
-  time_scaling: 5
+  time_scaling: 1
 --- !u!4 &1206873593
 Transform:
   m_ObjectHideFlags: 0
