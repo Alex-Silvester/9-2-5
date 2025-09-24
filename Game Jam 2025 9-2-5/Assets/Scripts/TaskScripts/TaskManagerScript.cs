@@ -11,6 +11,9 @@ public class TaskManagerScript : MonoBehaviour
 
     public GameObject point_manager;
 
+    [SerializeField]
+    GameObject player_arrow;
+
     bool task_selected = false;
 
     int task_idx = 0;
@@ -37,9 +40,10 @@ public class TaskManagerScript : MonoBehaviour
             task_prompts[task_idx].GetComponent<InteractPromptUI>().resetTask();
             task_selected = false;
 
-            Debug.Log($"Completed: {tasks_completed}");
             point_manager.GetComponent<PointManager>().Score += 10;
         }
+
+        player_arrow.transform.LookAt(task_prompts[task_idx].transform);
     }
 
     void selectTask()
@@ -59,8 +63,6 @@ public class TaskManagerScript : MonoBehaviour
 
         //stop selecting new tasks
         task_selected = true;
-
-        Debug.Log($"Task: {task_idx}");
     }
 
     public bool taskInProgress()
