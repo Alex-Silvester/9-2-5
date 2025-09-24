@@ -58,7 +58,7 @@ public class TimerStressScript : MonoBehaviour
                 stress += boss_close_multiplier * Time.deltaTime;
                 stress_meter.value = stress;
                 stress_meter_pc.value = stress;
-                Debug.Log("boss " +stress);
+                //Debug.Log("boss " +stress);
             }
             if (boss_close == false)
             {
@@ -67,14 +67,14 @@ public class TimerStressScript : MonoBehaviour
                     stress += stress_gain_multiplier * Time.deltaTime;
                     stress_meter.value = stress;
                     stress_meter_pc.value = stress;
-                    Debug.Log("normal " + stress);
+                    //Debug.Log("normal " + stress);
                 }
                 if (invert == -1)
                 {
                     stress -= stress_reduction_multiplier * Time.deltaTime;
                     stress_meter.value = stress;
                     stress_meter_pc.value = stress;
-                    Debug.Log("invert " + stress);
+                    //Debug.Log("invert " + stress);
                 }
             }
         }

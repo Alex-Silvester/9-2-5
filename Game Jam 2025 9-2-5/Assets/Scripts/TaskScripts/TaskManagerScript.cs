@@ -17,8 +17,6 @@ public class TaskManagerScript : MonoBehaviour
 
     int tasks_completed = 0;
 
-    bool first_pass = true;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,7 +49,7 @@ public class TaskManagerScript : MonoBehaviour
         int prev_idx = task_idx;
         task_idx = (int)Math.Floor(UnityEngine.Random.value * task_prompts.Capacity);
 
-        if(task_idx == prev_idx && task_prompts.Capacity > 1)
+        if(task_idx == prev_idx && task_prompts.Capacity > 0)
         {
             task_idx = (task_idx + 1)%task_prompts.Capacity;
         }
