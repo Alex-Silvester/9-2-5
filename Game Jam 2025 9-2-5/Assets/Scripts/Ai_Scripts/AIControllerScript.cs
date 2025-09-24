@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = System.Random;
@@ -17,8 +20,8 @@ public class AIControllerScript : MonoBehaviour
     public float speed;
 
     //timers
-    public float max_time_waiting;
-    public float time;
+    public float max_time_waiting = 5.0f;
+    private float time = 0;
     uint time_mul;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,23 +34,26 @@ public class AIControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Random rnd = new Random();
-        int numbercheck = waypoints.Length;
-
-
-
+        //Debug.Log(target);
+        //Debug.Log(agent.transform.position);
 
         // Calculate time.
-        time = (Time.time - (max_time_waiting * time_mul));
+        if (Vector3.Distance(agent.transform.position, target) <= 2)
+        {
+            Debug.Log("Close Enough");
+            time = (Time.time - (max_time_waiting * time_mul));
+        }
+        else
+        {
+            time = 0.0f;
+        }
         // Time is up.
         if (time >= max_time_waiting)
         {
             // Do whatever:
             //print("help");
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, speed * Time.deltaTime);
-            waypointIndex = rnd.Next(0, numbercheck);
-            //print(waypointIndex);
+            //transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, speed * Time.deltaTime);
+
             //IterateWaypointIndex();
             UpdateDestination();
 
@@ -59,6 +65,10 @@ public class AIControllerScript : MonoBehaviour
 
     void UpdateDestination()
     {
+        Random rnd = new Random();
+        int numbercheck = waypoints.Length;
+        waypointIndex = rnd.Next(0, numbercheck);
+
         target = waypoints[waypointIndex].position;
         agent.SetDestination(target);
     }

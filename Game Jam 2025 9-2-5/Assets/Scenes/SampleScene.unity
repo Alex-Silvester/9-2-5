@@ -468,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 35279146}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.902358, y: 3.687508, z: -19.434242}
+  m_LocalPosition: {x: -24.14, y: 3.687508, z: -32.44}
   m_LocalScale: {x: 0.14356928, y: 1.0779433, z: 0.14356928}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3244,7 +3244,7 @@ Transform:
   m_GameObject: {fileID: 619426672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.487642, y: 3.687508, z: -15.800241}
+  m_LocalPosition: {x: -20.41, y: 3.687508, z: -15.800241}
   m_LocalScale: {x: 0.14356928, y: 1.0779433, z: 0.14356928}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4063,6 +4063,7 @@ Transform:
   - {fileID: 619426676}
   - {fileID: 711036227}
   - {fileID: 35279150}
+  - {fileID: 950322640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &723514753
@@ -5269,6 +5270,114 @@ Transform:
   m_Children: []
   m_Father: {fileID: 951739306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &950322639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950322640}
+  - component: {fileID: 950322643}
+  - component: {fileID: 950322642}
+  - component: {fileID: 950322641}
+  m_Layer: 0
+  m_Name: Waypoint4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950322640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950322639}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.05, y: 3.687508, z: -27.36}
+  m_LocalScale: {x: 0.14356928, y: 1.0779433, z: 0.14356928}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 723236628}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &950322641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950322639}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &950322642
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950322639}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &950322643
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950322639}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &951739305
 GameObject:
   m_ObjectHideFlags: 0
@@ -5821,7 +5930,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -5910,7 +6019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275729eeaa8a3b84bb26f059f959d435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractKey: 0
+  InteractKey: 101
   InteractPrompt_UI: {fileID: 1567842074}
   TargetUI: {fileID: 1117772229}
   task: {fileID: 11400000, guid: 734a5afd908bce2449b11b193532e63f, type: 2}
@@ -6402,7 +6511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1482433541}
   smoothTime: 0.3
-  offset: {x: 0, y: 5, z: -5}
+  offset: {x: 0, y: 20, z: -5}
 --- !u!1 &1268408557
 GameObject:
   m_ObjectHideFlags: 0
@@ -7131,7 +7240,6 @@ MonoBehaviour:
   - {fileID: 35279150}
   speed: 5
   max_time_waiting: 5
-  time: 0
 --- !u!136 &1411322071
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9816,7 +9924,6 @@ GameObject:
   - component: {fileID: 1827023206}
   - component: {fileID: 1827023205}
   - component: {fileID: 1827023204}
-  - component: {fileID: 1827023203}
   - component: {fileID: 1827023202}
   - component: {fileID: 1827023210}
   m_Layer: 0
@@ -9847,25 +9954,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4.913559
   m_Center: {x: -0.0054799593, y: 0, z: 0}
---- !u!114 &1827023203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827023201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78337efa4f178494cbe65262d5f5efde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 619426676}
-  - {fileID: 711036227}
-  - {fileID: 35279150}
-  speed: 3
-  max_time_waiting: 5
-  time: 0
 --- !u!114 &1827023204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9884,7 +9972,6 @@ MonoBehaviour:
   - {fileID: 35279150}
   speed: 5
   max_time_waiting: 5
-  time: 0
 --- !u!195 &1827023205
 NavMeshAgent:
   m_ObjectHideFlags: 0
