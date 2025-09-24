@@ -17,12 +17,11 @@ public class AIControllerScript : MonoBehaviour
     int waypointIndex;
     Vector3 target;
 
-    public float speed;
-
     //timers
     public float max_time_waiting = 5.0f;
-    private float time = 0;
-    uint time_mul;
+
+    [SerializeField]
+    float time = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,32 +33,27 @@ public class AIControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(target);
-        //Debug.Log(agent.transform.position);
 
         // Calculate time.
         if (Vector3.Distance(agent.transform.position, target) <= 2)
         {
-            Debug.Log("Close Enough");
-            time = (Time.time - (max_time_waiting * time_mul));
+            time += Time.deltaTime;
         }
         else
         {
             time = 0.0f;
         }
+
         // Time is up.
         if (time >= max_time_waiting)
         {
-            // Do whatever:
-            //print("help");
-            //transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, speed * Time.deltaTime);
+            Debug.Log($"Stopped waiting {time}");
 
             //IterateWaypointIndex();
             UpdateDestination();
 
             // Reset time.
             time = 0.0f;
-            time_mul++;
         }
     }
 
@@ -67,7 +61,7 @@ public class AIControllerScript : MonoBehaviour
     {
         Random rnd = new Random();
         int numbercheck = waypoints.Length;
-        waypointIndex = rnd.Next(0, numbercheck);
+        waypointIndex = rnd.Next(0, numbercheck); 
 
         target = waypoints[waypointIndex].position;
         agent.SetDestination(target);
