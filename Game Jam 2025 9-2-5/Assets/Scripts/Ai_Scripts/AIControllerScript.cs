@@ -11,6 +11,7 @@ public class AIControllerScript : MonoBehaviour
 {
 
     NavMeshAgent agent;
+    public Animator anim;
 
     //waypoints
     public Transform[] waypoints;
@@ -28,6 +29,7 @@ public class AIControllerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         UpdateDestination();
     }
@@ -35,7 +37,14 @@ public class AIControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(time == 0)
+        {
+            anim.SetBool("Moving", true);
+        }
+        else if (time > 0)
+        {
+            anim.SetBool("Moving", false);
+        }
         // Calculate time.
         if (Vector3.Distance(agent.transform.position, target) <= 2)
         {

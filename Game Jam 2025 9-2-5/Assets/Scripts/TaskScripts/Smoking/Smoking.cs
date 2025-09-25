@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,11 @@ public class Smoking : Task
     public override void run()
     {
         Debug.Log("Smoking");
-        optional_interactable.GetComponent<TimerStressScript>().stress -= 20.0f;
-        complete = true;
+        if (optional_interactable.GetComponent<PlayerController>().destress_cig >= 1)
+        {
+            optional_interactable.GetComponent<PlayerController>().destress_cig -= 1;
+            optional_interactable.transform.Find("TimerStressController").GetComponent<TimerStressScript>().stress -= 20;
+            complete = true;
+        }      
     }
 }

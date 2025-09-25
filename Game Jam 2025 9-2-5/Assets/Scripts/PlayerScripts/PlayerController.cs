@@ -8,17 +8,21 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public int destress_cig;
     public float smoothTime = 0.05f;
+    public Animator anim;
+    public bool moving = false;
 
     [SerializeField] private float gravity = -9.81f;
     private float gravity_multiplier = 3.0f;
     [SerializeField] private float velocity;
 
 
-    private float currentVelocity;
+    public float currentVelocity;
     private CharacterController characterController;
     private Vector3 direction;
     private Vector2 move;
+    public Vector3 movingvelo; 
 
     public GameObject PC;
     public GameObject task_manager;
@@ -33,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,10 +48,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       Debug.Log(moving);
        Gravity();
        Rotation();
-
        if (Input.GetKeyDown(KeyCode.F))
        {
            stopMovingPlayer();
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour
        if(!task_manager.GetComponent<TaskManagerScript>().taskInProgress())
        {
            movePlayer();
+            Animation();  
        }
         
     }
@@ -87,6 +92,40 @@ public class PlayerController : MonoBehaviour
     public void movePlayer()
     {
         characterController.Move(direction * speed * Time.deltaTime);             
+    }
+
+
+    public void Animation()
+    {
+        if(Input.GetKey(KeyCode.W))
+        {
+            moving = true;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            moving = true;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            moving = true;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            moving = true;
+        }
+        else
+        {
+            moving = false;    
+        }
+
+        if (moving == true)
+        {
+            anim.SetBool("Moving", true);
+        }
+        else if (moving == false)
+        {
+            anim.SetBool("Moving", false);
+        }
     }
 
     public void stopMovingPlayer()
