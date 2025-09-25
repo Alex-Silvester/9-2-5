@@ -16,6 +16,7 @@ public class PointManager : MonoBehaviour
     void Update()
     {
         Points_Text.text = ("Points:" + Score.ToString());
+        StaticDataScript.final_score = Points_Text.text;
         //if (Input.GetKeyDown(KeyCode.E))
         //{
         //    Score = Score + 1;    
