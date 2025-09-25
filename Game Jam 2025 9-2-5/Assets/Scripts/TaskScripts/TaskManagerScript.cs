@@ -1,0 +1,77 @@
+using NUnit.Framework;
+using UnityEngine;
+using System.Collections.Generic;
+using System;
+using UnityEngine.Rendering;
+
+public class TaskManagerScript : MonoBehaviour
+{
+    [SerializeField]
+    List<GameObject> task_prompts;
+
+    public GameObject point_manager;
+
+    [SerializeField]
+    GameObject player_arrow;
+
+    bool task_selected = false;
+
+    int task_idx = 0;
+
+    int tasks_completed = 0;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        selectTask();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //if there is no task selected, select a task
+        if (!task_selected)
+        {
+            selectTask();
+        }
+        else if (task_prompts[task_idx].GetComponent<InteractPromptUI>().taskComplete())
+        {
+            tasks_completed++;
+            task_prompts[task_idx].GetComponent<InteractPromptUI>().resetTask();
+            task_selected = false;
+
+            Debug.Log("Task: " + task_idx + " Completed");
+            Debug.Log("Tasks Completed: " + tasks_completed);
+
+            point_manager.GetComponent<PointManager>().Score += 10;
+        }
+
+        player_arrow.transform.LookAt(task_prompts[task_idx].transform);
+    }
+
+    void selectTask()
+    {
+        //select a random task that isn't the last task
+
+        int prev_idx = task_idx;
+        task_idx = (int)Math.Floor(UnityEngine.Random.value * task_prompts.Capacity);
+
+        if(task_idx == prev_idx && task_prompts.Capacity > 0)
+        {
+            task_idx = (task_idx + 1)%task_prompts.Capacity;
+        }
+
+        //tell the task that it has been selected
+        task_prompts[task_idx].GetComponent<InteractPromptUI>().select();
+
+        Debug.Log(task_idx);
+
+        //stop selecting new tasks
+        task_selected = true;
+    }
+
+    public bool taskInProgress()
+    {
+        return task_prompts[task_idx].GetComponent<InteractPromptUI>().inProgress();
+    }
+}
