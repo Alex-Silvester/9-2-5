@@ -60,7 +60,6 @@ public class AIControllerScript : MonoBehaviour
 
         if(Vector3.Distance(agent.transform.position, KeyWaypoint.position) <= 2 && target == KeyWaypoint.position)
         {
-            Debug.Log(agent + " Is at Desk");
             max_time_waiting = desk_time_waiting;
         }
         else
