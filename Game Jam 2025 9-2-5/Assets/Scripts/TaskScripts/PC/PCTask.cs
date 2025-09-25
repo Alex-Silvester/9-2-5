@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PCTask", menuName = "Scriptable Objects/PCTask")]
@@ -14,6 +15,7 @@ public class PCTask : Task
 
     public void sendEmail()
     {
+        Debug.Log("Complete");
         complete=true;
     }
 }

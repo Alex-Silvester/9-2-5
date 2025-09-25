@@ -40,6 +40,9 @@ public class TaskManagerScript : MonoBehaviour
             task_prompts[task_idx].GetComponent<InteractPromptUI>().resetTask();
             task_selected = false;
 
+            Debug.Log("Task: " + task_idx + " Completed");
+            Debug.Log("Tasks Completed: " + tasks_completed);
+
             point_manager.GetComponent<PointManager>().Score += 10;
         }
 
@@ -60,6 +63,8 @@ public class TaskManagerScript : MonoBehaviour
 
         //tell the task that it has been selected
         task_prompts[task_idx].GetComponent<InteractPromptUI>().select();
+
+        Debug.Log(task_idx);
 
         //stop selecting new tasks
         task_selected = true;

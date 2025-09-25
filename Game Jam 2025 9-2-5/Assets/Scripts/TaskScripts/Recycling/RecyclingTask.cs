@@ -20,6 +20,7 @@ public class RecyclingTask : Task
         if(num_of_presses == num_of_presses_needed)
         {
             Debug.Log($"Num: {num_of_presses} Needed: {num_of_presses_needed}");
+            Debug.Log("Complete");
             complete = true;
         }
     }

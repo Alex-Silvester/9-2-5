@@ -14,11 +14,13 @@ public class AIControllerScript : MonoBehaviour
 
     //waypoints
     public Transform[] waypoints;
+    public Transform KeyWaypoint;
     int waypointIndex;
     Vector3 target;
 
     //timers
     public float max_time_waiting = 5.0f;
+    public float desk_time_waiting = 20f;
 
     [SerializeField]
     float time = 0;
@@ -47,13 +49,23 @@ public class AIControllerScript : MonoBehaviour
         // Time is up.
         if (time >= max_time_waiting)
         {
-            Debug.Log($"Stopped waiting {time}");
+            //Debug.Log($"Stopped waiting {time}");
 
             //IterateWaypointIndex();
             UpdateDestination();
 
             // Reset time.
             time = 0.0f;
+        }
+
+        if(Vector3.Distance(agent.transform.position, KeyWaypoint.position) <= 2 && target == KeyWaypoint.position)
+        {
+            Debug.Log(agent + " Is at Desk");
+            max_time_waiting = desk_time_waiting;
+        }
+        else
+        {
+            max_time_waiting = 5.0f;
         }
     }
 
