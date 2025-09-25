@@ -4982,12 +4982,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 32.91, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!23 &717635142
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7487,7 +7487,7 @@ MonoBehaviour:
   stress_gain_multiplier: 3
   stress_reduction_multiplier: 6
   boss_close_multiplier: 8
-  stop_stress: 1
+  stop_stress: 0
   invert_stress: 0
   boss_close: 0
   stress: 0
@@ -8946,7 +8946,7 @@ Transform:
   m_GameObject: {fileID: 1482433540}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8, y: 12.39, z: 3.5}
+  m_LocalPosition: {x: 2.28, y: 1.73, z: -1.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

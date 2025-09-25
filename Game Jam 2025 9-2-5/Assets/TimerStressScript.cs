@@ -44,39 +44,19 @@ public class TimerStressScript : MonoBehaviour
     void Update()
     {
 
-        if (invert_stress == true)
-        {
-            invert *= -1;
-            invert_stress = false;
-        }
-
 
         if (stop_stress == false)
         {
-            if (boss_close == true)
+            if (boss_close)
             {
                 stress += boss_close_multiplier * Time.deltaTime;
-                stress_meter.value = stress;
-                stress_meter_pc.value = stress;
-                //Debug.Log("boss " +stress);
             }
-            if (boss_close == false)
-            {
-                if (invert == 1)
-                {
-                    stress += stress_gain_multiplier * Time.deltaTime;
-                    stress_meter.value = stress;
-                    stress_meter_pc.value = stress;
-                    //Debug.Log("normal " + stress);
-                }
-                if (invert == -1)
-                {
-                    stress -= stress_reduction_multiplier * Time.deltaTime;
-                    stress_meter.value = stress;
-                    stress_meter_pc.value = stress;
-                    //Debug.Log("invert " + stress);
-                }
-            }
+            
+
+            stress += stress_gain_multiplier * Time.deltaTime * (invert_stress ? -1 : 1);
+            
+            stress_meter.value = stress;
+            stress_meter_pc.value = stress;
         }
         if (stress >= max_stress)
         {
