@@ -9,6 +9,7 @@ public class ClipFollow : MonoBehaviour
     public Material ClippingMat;
     public Camera main_camera;
     public Transform player;
+    public LayerMask Mask;
     Ray ray;
 
     // Update is called once per frame
@@ -18,9 +19,9 @@ public class ClipFollow : MonoBehaviour
         ray = new Ray(main_camera.transform.position, (player.transform.position - main_camera.transform.position).normalized);
         Debug.DrawLine(main_camera.transform.position, player.transform.position, Color.green);
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, Mask))
         {
-            if (hit.collider.tag == "wall")
+            if (hit.collider.tag == "Wall")
             {
                 Debug.Log("Wall Hit");
                 ClippingMat.SetFloat(Size, 1.5f);
@@ -32,7 +33,12 @@ public class ClipFollow : MonoBehaviour
                 ClippingMat.SetFloat(Size, 0);
             }
         }
-        var view = main_camera.WorldToViewportPoint(transform.position);
+        else 
+        {
+            Debug.Log("No mask hit");
+            ClippingMat.SetFloat(Size, 0);
+        }
+            var view = main_camera.WorldToViewportPoint(transform.position);
         ClippingMat.SetVector(Position, view);
     }
 }
