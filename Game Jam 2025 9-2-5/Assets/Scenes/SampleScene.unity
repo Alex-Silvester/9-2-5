@@ -1770,9 +1770,9 @@ GameObject:
   - component: {fileID: 92325395}
   - component: {fileID: 92325394}
   - component: {fileID: 92325393}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1836,7 +1836,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 04f307773fd991b4ca53108c260e3d4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13812,9 +13812,9 @@ GameObject:
   - component: {fileID: 731866752}
   - component: {fileID: 731866751}
   - component: {fileID: 731866750}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13878,7 +13878,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 04f307773fd991b4ca53108c260e3d4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -41157,6 +41157,7 @@ GameObject:
   - component: {fileID: 4216224150939366788}
   - component: {fileID: 2831204577177107641}
   - component: {fileID: 5835531128730918401}
+  - component: {fileID: 5835531128730918402}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -41172,6 +41173,24 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5835531128730918400}
   m_Enabled: 1
+--- !u!114 &5835531128730918402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835531128730918400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8869d82cbd4854d48890d30a833a6c70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClippingMat: {fileID: 2100000, guid: 04f307773fd991b4ca53108c260e3d4c, type: 2}
+  main_camera: {fileID: 330585545}
+  player: {fileID: 4218780193114736310}
+  Mask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &5979587500065800367
 GameObject:
   m_ObjectHideFlags: 0

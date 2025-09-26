@@ -21,7 +21,7 @@ public class ClipFollow : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, Mask))
         {
-            if (hit.collider.tag == "wall")
+            if (hit.collider.tag == "Wall")
             {
                 Debug.Log("Wall Hit");
                 ClippingMat.SetFloat(Size, 1.5f);
@@ -33,7 +33,12 @@ public class ClipFollow : MonoBehaviour
                 ClippingMat.SetFloat(Size, 0);
             }
         }
-        var view = main_camera.WorldToViewportPoint(transform.position);
+        else 
+        {
+            Debug.Log("No mask hit");
+            ClippingMat.SetFloat(Size, 0);
+        }
+            var view = main_camera.WorldToViewportPoint(transform.position);
         ClippingMat.SetVector(Position, view);
     }
 }
