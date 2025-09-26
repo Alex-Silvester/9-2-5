@@ -1655,13 +1655,15 @@ MonoBehaviour:
 
     De-stress points reduce stress
 
-    Avoid the boss who
-    increases stress gain
+    (Coffee machine, Smoking,
+    Break room)
 
-    Survive your 9-2-5 job
+    Avoid the boss who increases stress gain
 
-    The arrow points you
-    to your next task'
+    Survive your 9-2-5
+    job
+
+    The arrow points you to your next task'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6eaa94502a8d7da4d8a6ae1b2f193dea, type: 2}
   m_sharedMaterial: {fileID: 3167063358324018372, guid: 6eaa94502a8d7da4d8a6ae1b2f193dea, type: 2}
@@ -1688,7 +1690,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.35
+  m_fontSize: 53.3
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1726,7 +1728,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -194.87666, y: 0, z: -198.55534, w: 0}
+  m_margin: {x: -194.87666, y: -58.213806, z: -198.55534, w: -52.66974}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2702,7 +2704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.395}
   m_AnchorMax: {x: 0.5, y: 0.395}
-  m_AnchoredPosition: {x: 0, y: -237.9}
+  m_AnchoredPosition: {x: 0, y: -318.53}
   m_SizeDelta: {x: 430, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839614062
@@ -3160,8 +3162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 71}
-  m_SizeDelta: {x: 809.3, y: 418.9}
+  m_AnchoredPosition: {x: 0, y: 36.3}
+  m_SizeDelta: {x: 809.3, y: 525.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2062374979
 MonoBehaviour:
