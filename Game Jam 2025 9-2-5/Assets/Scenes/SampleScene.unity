@@ -6811,9 +6811,7 @@ Transform:
   - {fileID: 654530795}
   - {fileID: 1801128054}
   - {fileID: 1480826015}
-  - {fileID: 302238577}
   - {fileID: 2125765979}
-  - {fileID: 2026286961}
   - {fileID: 367386405}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16760,7 +16758,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 21.921646
-  MaxDistance: 21.921646
+  MaxDistance: 21.921648
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -38633,6 +38631,7 @@ GameObject:
   - component: {fileID: 4216224150939366788}
   - component: {fileID: 2831204577177107641}
   - component: {fileID: 5835531128730918401}
+  - component: {fileID: 5835531128730918402}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -38655,6 +38654,14 @@ MonoBehaviour:
   ClippingMat: {fileID: 2100000, guid: 04f307773fd991b4ca53108c260e3d4c, type: 2}
   main_camera: {fileID: 330585545}
   player: {fileID: 4218780193114736310}
+--- !u!81 &5835531128730918402
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835531128730918400}
+  m_Enabled: 1
 --- !u!1 &5979587500065800367
 GameObject:
   m_ObjectHideFlags: 0
